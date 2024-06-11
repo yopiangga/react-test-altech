@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import {
   FaGithub,
   FaInstagram,
@@ -17,7 +17,7 @@ export function NavbarComponent() {
   const [sectionActive, setSectionActive] = useState("main");
   const [mobileMenu, setMobileMenu] = useState(false);
 
-  window.onscroll = function () {
+  const windowScroll = function () {
     if (window.scrollY > 0) {
       document.getElementById("navbar-component").classList.add("bg-dark-200");
     } else {
@@ -26,6 +26,13 @@ export function NavbarComponent() {
         .classList.remove("bg-dark-200");
     }
   };
+
+  useEffect(() => {
+    window.addEventListener("scroll", windowScroll);
+    return () => {
+      window.removeEventListener("scroll", windowScroll);
+    };
+  }, []);
 
   return (
     <div
