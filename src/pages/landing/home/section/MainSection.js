@@ -20,11 +20,7 @@ export function MainSection() {
             You can manage your order and peyment with this application.
           </p>
           <div className="flex gap-2 mt-4">
-            <a
-              href="https://drive.google.com/drive/folders/1Yk7ql7p65XrMk_BDqnL8OiKNAX1SXwPn?usp=sharing"
-              target="_blank"
-              className="bg-primary text-dark-300 font-[500] px-10 py-3 mt-4 hover:bg-dark-100 hover:text-primary duration-200 rounded-xl"
-            >
+            <a className="bg-primary text-dark-300 font-[500] px-10 py-3 mt-4 hover:bg-dark-100 hover:text-primary duration-200 rounded-xl">
               Get Started
             </a>
           </div>

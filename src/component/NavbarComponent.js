@@ -51,9 +51,8 @@ export function NavbarComponent() {
               <button
                 className={`list-none py-2 hover:bg-primary hover:text-dark-300`}
                 onClick={() => {
-                  document
-                    .getElementById("main")
-                    .scrollIntoView({ behavior: "smooth" });
+                  setPage("home");
+                  navigate("/");
                 }}
               >
                 Home
@@ -62,44 +61,40 @@ export function NavbarComponent() {
               <button
                 className={`list-none py-2 hover:bg-primary hover:text-dark-300`}
                 onClick={() => {
-                  document
-                    .getElementById("experience")
-                    .scrollIntoView({ behavior: "smooth" });
+                  setPage("about");
+                  navigate("/about");
                 }}
               >
-                Experience
+                About
               </button>
 
               <button
                 className={`list-none py-2 hover:bg-primary hover:text-dark-300`}
                 onClick={() => {
-                  document
-                    .getElementById("job-position")
-                    .scrollIntoView({ behavior: "smooth" });
+                  setPage("pricing");
+                  navigate("/pricing");
                 }}
               >
-                Job Position
+                Pricing
               </button>
 
               <button
                 className={`list-none py-2 hover:bg-primary hover:text-dark-300`}
                 onClick={() => {
-                  document
-                    .getElementById("technology")
-                    .scrollIntoView({ behavior: "smooth" });
-                }}
-              >
-                Technology
-              </button>
-              <button
-                className={`list-none py-2 hover:bg-primary hover:text-dark-300`}
-                onClick={() => {
-                  document
-                    .getElementById("contact")
-                    .scrollIntoView({ behavior: "smooth" });
+                  setPage("contact");
+                  navigate("/contact");
                 }}
               >
                 Contact
+              </button>
+              <button
+                className={`list-none py-2 hover:bg-primary hover:text-dark-300`}
+                onClick={() => {
+                  setPage("sign-in");
+                  navigate("/sign-in");
+                }}
+              >
+                Sign In
               </button>
             </ul>
           </div>
@@ -112,7 +107,7 @@ export function NavbarComponent() {
         <div className="lg:flex hidden gap-8 outline-none">
           <li
             className={`list-none hover:text-primary ${
-              sectionActive == "main" ? "text-primary" : "text-white"
+              page == "home" ? "text-primary" : "text-white"
             }`}
           >
             <button
@@ -126,7 +121,7 @@ export function NavbarComponent() {
           </li>
           <li
             className={`list-none hover:text-primary ${
-              sectionActive == "experience" ? "text-primary" : "text-white"
+              page == "about" ? "text-primary" : "text-white"
             }`}
           >
             <button
@@ -140,7 +135,7 @@ export function NavbarComponent() {
           </li>
           <li
             className={`list-none hover:text-primary ${
-              sectionActive == "job-position" ? "text-primary" : "text-white"
+              page == "pricing" ? "text-primary" : "text-white"
             }`}
           >
             <button
@@ -154,14 +149,21 @@ export function NavbarComponent() {
           </li>
           <li
             className={`list-none hover:text-primary ${
-              sectionActive == "contact" ? "text-primary" : "text-white"
+              page == "contact" ? "text-primary" : "text-white"
             }`}
           >
-            <button onClick={() => {}}>Contact</button>
+            <button
+              onClick={() => {
+                setPage("contact");
+                navigate("/contact");
+              }}
+            >
+              Contact
+            </button>
           </li>
           <li
             className={`list-none hover:text-primary ${
-              sectionActive == "contact" ? "text-primary" : "text-white"
+              page == "sign-in" ? "text-primary" : "text-white"
             }`}
           >
             <button
